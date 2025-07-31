@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class Linear_search {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean found = false;
         System.out.println("enter the number of elements in an array: ");
@@ -28,6 +28,50 @@ public class Linear_search {
             System.out.println("seaching element does not lies in the array.");
         }
         sc.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Trying it with string variables .....
+
+   /*       public static int linear_search(String str[],String item){
+    for(int i =0;i<5;i++){
+      if(str[i]==item){
+        
+        return i+1;
+        
+      }
+           
+    }
+    return -1;
+
+  }
+  public static void main(String[] args) {
+    
+      String menu[]= new String[5];
+      menu[0] = "veg soup";
+      menu[1] = "non-veg soup";
+      menu[2] = "chinese noodles";
+      menu[3] = "japnese manchurian";
+      menu[4] = "dosa";
+      String item = "veg soup";
+     int index = linear_search(menu, item);
+      if(index ==-1){
+        System.out.println("food is  not in the menu...");
+      }
+      else{
+        System.out.println(menu[index-1]+" is in  in the menu at page: "+index);
+      }
+      */
     }
     
 }
