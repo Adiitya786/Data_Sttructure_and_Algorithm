@@ -22,6 +22,7 @@ public class PAirs_array{
         }
         System.out.println("pairs in array: ");
         pairs(arr);
+        sc.close();
          
     }
 }
