@@ -27,6 +27,19 @@ public class Max_subarray_2 {
         
          System.out.println("maximum sum of a subarray: "+max_sum);
         }
+
+        public static void kadanes_algo(int arr[]){
+              int curr_sum=0;
+              int max_sum =Integer.MIN_VALUE;
+              for(int i=0;i<arr.length;i++){
+                curr_sum+=arr[i];
+                if(curr_sum<0){
+                    curr_sum=arr[i];
+                }
+                max_sum = Math.max(max_sum, curr_sum);
+              }
+              System.out.println("maximum sum of an subarray is:  "+max_sum);
+        }
        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the number of elements: ");
@@ -36,7 +49,7 @@ public class Max_subarray_2 {
         for(int i =0;i<n;i++){
             arr[i]= sc.nextInt();
         }
-          subarray_max_By_prefix(arr);
+          kadanes_algo(arr);
           sc.close();
 }
 }
