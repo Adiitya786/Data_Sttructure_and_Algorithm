@@ -1,4 +1,4 @@
-public class input_output{
+public class input_output1D{
 
     public static void update(int marks[],int non_changable){
         for(int i=0;i<marks.length;i++){

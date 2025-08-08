@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class input_output {
+public class input_output2D {
 
 
     // to search for a particular element in a 2D array
