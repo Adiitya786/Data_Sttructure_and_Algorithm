@@ -1,9 +1,15 @@
 public class Inheritance {
     public static void main(String[] args) {
-        fish tuna = new fish();
-        tuna.eat();
-        tuna.color ="black";
-       System.out.println(tuna.color);
+    //     fish tuna = new fish();
+    //     tuna.eat();
+    //     tuna.color ="black";
+    //    System.out.println(tuna.color);
+
+
+    Dogs shiro = new Dogs();
+    shiro.color = " Black";
+    shiro.legs =4;
+    System.out.println(shiro.color+"\n"+shiro.legs);
     }
 }
 
@@ -23,10 +29,21 @@ class Animal{
     }
 }
 
-// child class or derived class
-class fish extends Animal{
-    String fins;
-    void swim(){
-        System.out.println("swims very fast...");
-    }
+// base class
+class mammal extends Animal{
+    int legs;
 }
+
+// base class
+class Dogs extends mammal{
+    String breed;
+}
+
+
+// child class or derived class
+// class fish extends Animal{
+//     String fins;
+//     void swim(){
+//         System.out.println("swims very fast...");
+//     }
+// }
