@@ -1,9 +1,8 @@
-import javax.swing.plaf.multi.MultiScrollBarUI;
 
 public class Abstract_class{
     public static void main(String[] args) {
         mustang m = new mustang();
-        // m.walk();
+         m.walk();
     }
 }
 
