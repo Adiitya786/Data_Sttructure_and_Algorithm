@@ -1,4 +1,4 @@
-public class Fibonacci {
+public class Factorial {
 
     public static int print_fibo(int n){
         
