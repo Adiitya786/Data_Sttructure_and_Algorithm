@@ -7,7 +7,8 @@ public class Factorial {
         }
        
        int fib=  print_fibo(n-1);
-        int fiboo=  n * print_fibo(n-1);   //  Recursive case
+       
+        int fiboo=  n * fib;   //  Recursive case
        
        return fiboo;
     }
