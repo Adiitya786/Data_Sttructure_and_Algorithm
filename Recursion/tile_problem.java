@@ -14,7 +14,7 @@ public class tile_problem {
     }
 
     public static void main(String[] args) {
-        System.out.println(tile(4));
+        System.out.println(tile(5));
     }
     
 }
