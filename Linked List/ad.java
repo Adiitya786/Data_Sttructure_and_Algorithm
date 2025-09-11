@@ -8,8 +8,9 @@ public class ad {
             this.next = null;
         }
     }
-        private Node head;
-        private Node tail;
+        public static Node head;
+        public static Node tail;
+        
 
         public void addfirst(int data){
            // creating a new node
@@ -36,7 +37,7 @@ public class ad {
         public void print(){
             Node temp = head;
             if(head == null){
-                System.out.println("Linked List if empty....");
+                System.out.println("Linked List is empty....");
             }
             while(temp != null){
                 System.out.println(temp.data+" ");
@@ -46,8 +47,16 @@ public class ad {
         }
         public static void main(String[] args) {
             ad ll = new ad();
+            ll.print();
            ll.addfirst(2);
            ll.print();
+           ll.addfirst(1);
+           ll.print();
+           ll.addlast(3);
+           ll.print();
+           ll.addlast(4);
+           ll.print();
+           
         }
     }
 
