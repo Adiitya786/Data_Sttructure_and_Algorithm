@@ -103,6 +103,24 @@ public class ad {
             }
             System.out.println("null");
         }
+             public  int search(int key){
+            Node temp = head;
+            int i =0;
+            if(head == null){
+                System.out.println("empty ll..");
+                return -1;
+            }
+            while(temp != null){
+                if(temp.data == key){
+                    return i;
+                }
+                else{
+                    temp = temp.next;
+                    i++;
+                }
+            }
+            return -1;
+        }
         public static void main(String[] args) {
             ad ll = new ad();
             // ll.print();
@@ -115,13 +133,15 @@ public class ad {
            ll.addlast(4);
            ll.addMiddle(3, 8);
           
-        //    System.out.println("Size of the linked list: "+size);
+        // //    System.out.println("Size of the linked list: "+size);
          ll.print();
-           ll.removeFirst();
-           ll.print();
-           ll.removelast();
-           ll.print();
-            System.out.println("Size of the linked list: "+size);
+        //    ll.removeFirst();
+        //    ll.print();
+        //    ll.removelast();
+        //    ll.print();
+            // System.out.println("Size of the linked list: "+size);
+            System.out.println(ll.search(3));
+            System.out.println(ll.search(10));
         }
     }
 
