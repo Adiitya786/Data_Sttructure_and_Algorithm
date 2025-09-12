@@ -98,10 +98,10 @@ public class ad {
                 System.out.println("Linked List is empty....");
             }
             while(temp != null){
-                System.out.println(temp.data+" ");
+                System.out.print(temp.data+"-> ");
              temp = temp.next;
             }
-            System.out.println();
+            System.out.println("null");
         }
         public static void main(String[] args) {
             ad ll = new ad();
@@ -116,7 +116,9 @@ public class ad {
            ll.addMiddle(3, 8);
           
         //    System.out.println("Size of the linked list: "+size);
+         ll.print();
            ll.removeFirst();
+           ll.print();
            ll.removelast();
            ll.print();
             System.out.println("Size of the linked list: "+size);
