@@ -103,7 +103,7 @@ public class ad {
             }
             System.out.println("null");
         }
-             public  int search(int key){
+             public  int itrsearch(int key){
             Node temp = head;
             int i =0;
             if(head == null){
@@ -120,6 +120,24 @@ public class ad {
                 }
             }
             return -1;
+        }
+
+        public int helper(Node head,int key){
+            if(head == null){
+                return -1;
+            }
+            if(head.data == key){
+                return 0;
+            }
+            int idx = helper(head.next, key);
+            if(idx == -1){
+                return -1;
+            }
+            return idx+1;
+
+        }
+        public int recsearch(int key){
+            return helper(head,key);
         }
         public static void main(String[] args) {
             ad ll = new ad();
@@ -140,8 +158,8 @@ public class ad {
         //    ll.removelast();
         //    ll.print();
             // System.out.println("Size of the linked list: "+size);
-            System.out.println(ll.search(3));
-            System.out.println(ll.search(10));
+            System.out.println(ll.recsearch(3));
+            System.out.println(ll.recsearch(10));
         }
     }
 
