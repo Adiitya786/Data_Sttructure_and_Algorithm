@@ -12,7 +12,7 @@ public class ad {
         public static Node tail;
         public static int size;  // automatically size initializes with 0.
         
-    //  for adding elements in the first position of a linked list.
+    //  for adding elements in the first position of a linked list. 
         public void addfirst(int data){
            // creating a new node
             Node newNode = new  Node(data);
@@ -162,23 +162,80 @@ public class ad {
             }
             head = prev;
         }
+
+        public void removeNfromEnd(int n){
+            int sz =0;
+            Node temp = head;
+            while(temp != null){
+                temp = temp.next;
+                sz++;
+            }
+            if(n == sz){
+                head = head.next; // remove first
+                return;
+            }
+            int  i =1;
+            int idfFromfst = sz-n;
+            Node prev  = head;
+            while(i<idfFromfst){
+                    prev = prev.next;
+                    i++;
+            }
+            prev.next = prev.next.next;
+            return;
+        }
+        public Node Mid(Node head){
+
+            // slow fast approach
+            Node slow = head;
+            Node fast = head;
+            while(fast != null && fast.next != null){
+                slow = slow.next;  //+1
+                fast = fast.next.next;  // +2
+            }
+            return slow;
+        }
+        public boolean isPalindrome(){
+            if(head == null || head.next == null){
+                return true;
+            }
+            //find mid
+             Node Midnode =  Mid(head);
+            // reverse the second half
+              Node prev = null;
+              Node curr = Midnode;
+              Node next;
+              while(curr != null){
+                    next = curr.next;
+                    curr.next = prev;
+                    prev = curr; 
+                    curr = next;
+              }
+             
+            // compare with the left and right
+           
+            Node right  = prev;
+             Node left = head;
+            while(right != null){
+                if(left.data != right.data){
+                    return false;
+                }
+                left = left.next;
+                right = right.next;
+            }
+            return true;
+        }
         public static void main(String[] args) {
             ad ll = new ad();
         
-           ll.addfirst(2);
+           ll.addlast(1);
         
-           ll.addfirst(1);
-        
-           ll.addlast(3);
-      
-           ll.addlast(4);
-           ll.addMiddle(3, 8);
-          ll.print();
-          ll.reverse();
-          ll.print();
-      
-            // System.out.println(ll.recsearch(3));
-            // System.out.println(ll.recsearch(10));
+           ll.addlast(2);
+
+           ll.addlast(2);
+           ll.addlast(1);
+           ll.print();
+           System.out.println(ll.isPalindrome());
         }
     }
 
