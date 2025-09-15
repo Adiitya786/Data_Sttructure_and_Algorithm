@@ -43,7 +43,7 @@ public class ad {
             
             if(idx ==0){
                 addfirst(data);
-                return;
+                return; 
             }
             Node newNode = new Node(data);
             size++;
@@ -225,17 +225,29 @@ public class ad {
             }
             return true;
         }
+
+        public  boolean isCycle(){
+            Node slow = head;
+            Node fast = head;
+            while(fast != null && fast.next != null){
+                slow = slow.next; //+1
+                fast = fast.next.next;  //+2
+                if(slow == fast){
+                    return true;  // cycle linked list
+                }
+            }
+            return false; // singly linked list
+        }
         public static void main(String[] args) {
             ad ll = new ad();
         
-           ll.addlast(1);
-        
-           ll.addlast(2);
-
-           ll.addlast(2);
-           ll.addlast(1);
-           ll.print();
-           System.out.println(ll.isPalindrome());
+          head = new Node(1);
+          head.next = new Node(2);
+           head .next.next= new Node(3);
+           head.next.next.next = head;
+           // 1-> 2->3->1  //cycle ll
+        //    System.out.println(ll.isPalindrome());
+        System.out.println(ll.isCycle());
         }
     }
 
