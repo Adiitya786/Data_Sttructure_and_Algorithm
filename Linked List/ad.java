@@ -226,7 +226,7 @@ public class ad {
             return true;
         }
 
-        public  boolean isCycle(){
+        public  static boolean isCycle(){
             Node slow = head;
             Node fast = head;
             while(fast != null && fast.next != null){
@@ -238,16 +238,45 @@ public class ad {
             }
             return false; // singly linked list
         }
+
+        public  static void removeCycle(){
+            if(!isCycle()){
+                return;
+            }
+             Node slow = head;
+            Node fast = head;
+            while(fast != null && fast.next != null){
+                slow = slow.next; //+1
+                fast = fast.next.next; 
+                 if(slow == fast){
+                     
+                    break;
+                }
+            }
+            slow = head;
+            Node prev = null;
+            while (slow != fast)  {
+                prev = fast;
+                slow = slow.next;
+               
+                fast = fast.next;
+            }
+            prev.next = null;
+           
+        }
         public static void main(String[] args) {
-            ad ll = new ad();
+            // ad ll = new ad();
         
-          head = new Node(1);
-          head.next = new Node(2);
-           head .next.next= new Node(3);
-           head.next.next.next = head;
+        head = new Node(1);
+        Node temp  = new Node(2);
+        head.next = temp;
+        head .next.next= new Node(3);
+        head.next.next.next =temp;
            // 1-> 2->3->1  //cycle ll
         //    System.out.println(ll.isPalindrome());
-        System.out.println(ll.isCycle());
+        System.out.println(isCycle());
+       removeCycle();
+        System.out.println(isCycle());
         }
     }
 
