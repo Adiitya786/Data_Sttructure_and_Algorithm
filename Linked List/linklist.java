@@ -1,5 +1,5 @@
 
-public class ad {
+public class linklist {
     public static class Node{
         int data;
         Node next;
