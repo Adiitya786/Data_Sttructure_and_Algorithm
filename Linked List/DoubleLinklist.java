@@ -78,6 +78,20 @@ public class DoubleLinklist {
             System.out.println("null");
             System.out.println();
         }
+            public void reverse(){
+            Node prev = null;
+            Node curr = tail =head; //right to left assign values
+            Node next;
+            while(curr != null){
+                next = curr.next;
+                curr.next =prev;
+                curr.prev = next;
+                prev = curr;
+                curr = next;
+            }
+            head = prev;
+        }
+
     
         public static void main(String[] args) {
             DoubleLinklist dll  = new DoubleLinklist();
@@ -88,9 +102,9 @@ public class DoubleLinklist {
             // dll.removefirst();
             // dll.print();
             dll.addLast(5);
-            dll.print();
-            dll.removeLast();
-            dll.print();
-        
+          
+            
+            dll.reverse();
+         dll.print();
     }
 }
