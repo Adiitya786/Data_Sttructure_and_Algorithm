@@ -68,7 +68,10 @@ static class Node{
      root.left.left.left = new Node(9);
     
 
+<<<<<<< HEAD
      int n1 =4,n2= 5;
      System.out.println("lowest common ancestor: "+ lca2(root, n1, n2).data);
+     int n1 =4,n2= 2;
+     System.out.println("lowest common ancestor: "+ lca(root, n1, n2).data);
     }
 }
