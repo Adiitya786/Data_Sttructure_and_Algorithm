@@ -19,7 +19,7 @@ HashMap<Character,Integer> hm = new HashMap<>();
      char ch = t.charAt(i);
      if(hm.containsKey(ch)){
         if(hm.get(ch) ==1) hm.remove(ch);
-        else
+        else 
          hm.put(ch,hm.get(ch)-1);
      }
      else{
